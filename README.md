@@ -9,6 +9,8 @@ This is an investigation of how to build moving/rotating car (similar to Uber ap
 * zoom map to always show both user and car
 * "random" locations generator logic was added in order to test "moving car" (new location is generated from the previous one with distance between 0..100m and bearing betweeen 0..360 degrees)
 
+![Demo image](https://github.com/sergii-frost/map-with-car-ios/blob/master/assets/demo_image.jpg)
+
 ## Project structure
 
 * `ViewController` is responsible for showing map, being MapDelegate and handling IBActions
@@ -20,6 +22,8 @@ This is an investigation of how to build moving/rotating car (similar to Uber ap
 ## Pitfalls
 
 * Car icon rotation is a bit tricky. Direction/Bearing is based on compass and North is 0°, while rotation goes clockwise (e.g. East is 90°, South is 180°, West is 270°). While image rotation happens counter-clockwise with 0° equal to original image rotation. To apply rotation for the car image the angle should be "inverted" like `360 - direction`.
+
+![Compass based direction](https://github.com/sergii-frost/map-with-car-ios/blob/master/assets/compass_based_direction.jpg)
 
 * Image rotation is not trivial either, separate extension was created in order to do that. Image quality can be impacted by rotation algoritm. 
 
